@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moazam Rauf — Writer</title>
+<meta name="description" content="Selected writing by Moazam Rauf. Content, copy, and editorial work for international publications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f5f5f7;
+    --bg-dark: #1d1d1f;
+    --ink: #1d1d1f;
+    --ink-mid: #6e6e73;
+    --ink-soft: #86868b;
+    --rule: #d2d2d7;
+    --link: #0066cc;
+    --link-hover: #0077ed;
+
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.47;
+    letter-spacing: -0.022em;
+    font-weight: 400;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  nav .nav-inner {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  nav .brand { color: var(--ink); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+
+  nav ul a {
+    color: var(--ink);
+    opacity: 0.85;
+    transition: opacity 0.2s var(--ease);
+    font-weight: 400;
+  }
+
+  nav ul a:hover { opacity: 1; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background: var(--bg);
+    padding: 120px 22px 100px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 7.5vw, 96px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .hero h2 {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ink-mid);
+    max-width: 720px;
+    margin: 0 auto 28px;
+  }
+
+  .hero .links {
+    display: inline-flex;
+    gap: 24px;
+    font-size: 17px;
+    color: var(--link);
+    font-weight: 400;
+  }
+
+  .hero .links a {
+    color: var(--link);
+    transition: color 0.2s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .hero .links a:hover { color: var(--link-hover); }
+
+  .hero .links a::after {
+    content: '›';
+    transition: transform 0.2s var(--ease);
+    display: inline-block;
+    font-weight: 400;
+  }
+
+  .hero .links a:hover::after {
+    transform: translateX(3px);
+  }
+
+  /* ---------- SECTION (publication) ---------- */
+  section.pub {
+    padding: 88px 22px;
+  }
+
+  section.pub:nth-of-type(odd) {
+    background: var(--bg);
+  }
+
+  section.pub:nth-of-type(even) {
+    background: var(--bg-alt);
+  }
+
+  .pub-inner {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .pub-eyebrow {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-mid);
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .pub-title {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .pub-sub {
+    font-size: clamp(18px, 2vw, 21px);
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.012em;
+    color: var(--ink-mid);
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 56px;
+  }
+
+  /* Article grid */
+  .articles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .article {
+    background: var(--bg);
+    border-radius: 18px;
+    padding: 36px 32px;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    display: flex;
+    flex-direction: column;
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  /* On white sections, give cards a subtle gray to differentiate */
+  section.pub:nth-of-type(odd) .article {
+    background: var(--bg-alt);
+    border-color: transparent;
+  }
+
+  .article:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  }
+
+  .article h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .article p {
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--ink-mid);
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  .article .read {
+    color: var(--link);
+    font-size: 15px;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s var(--ease);
+  }
+
+  .article .read::after {
+    content: '›';
+    transition: transform 0.2s var(--ease);
+    display: inline-block;
+  }
+
+  .article:hover .read::after {
+    transform: translateX(3px);
+  }
+
+  .article.full {
+    grid-column: 1 / -1;
+  }
+
+  /* ---------- FEATURED CARD (archive callout) ---------- */
+  .featured {
+    grid-column: 1 / -1;
+    background: var(--bg-dark) !important;
+    color: #f5f5f7;
+    border-radius: 18px;
+    padding: 56px 48px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 32px;
+    border: none !important;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease) !important;
+    min-height: 0;
+    text-align: left;
+  }
+
+  .featured > div { flex: 1; }
+
+  .featured:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .featured h4 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #f5f5f7;
+    margin-bottom: 8px;
+  }
+
+  .featured p {
+    font-size: 16px;
+    color: #a1a1a6;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .featured .read {
+    color: #2997ff;
+    font-size: 17px;
+    white-space: nowrap;
+  }
+
+  .featured .read::after {
+    content: '›';
+    margin-left: 4px;
+    transition: transform 0.2s var(--ease);
+    display: inline-block;
+  }
+
+  .featured:hover .read::after {
+    transform: translateX(3px);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--bg-alt);
+    padding: 56px 22px 40px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .footer-inner {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .footer-cta {
+    text-align: center;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 32px;
+  }
+
+  .footer-cta h3 {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.022em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .footer-cta p {
+    font-size: 19px;
+    color: var(--ink-mid);
+    letter-spacing: -0.012em;
+    margin-bottom: 28px;
+  }
+
+  .footer-cta .pill {
+    display: inline-block;
+    background: var(--link);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 980px;
+    font-size: 15px;
+    font-weight: 400;
+    transition: background 0.2s var(--ease);
+  }
+
+  .footer-cta .pill:hover { background: var(--link-hover); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: -0.005em;
+  }
+
+  .footer-bottom .legal { display: flex; gap: 20px; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 720px) {
+    nav ul { gap: 18px; display: none; }
+    .hero { padding: 80px 22px 64px; }
+    .hero h1 { font-size: 40px; }
+    .hero h2 { font-size: 19px; }
+    .hero .links { flex-direction: column; gap: 12px; align-items: center; }
+    section.pub { padding: 64px 22px; }
+    .articles { grid-template-columns: 1fr; gap: 14px; }
+    .article { padding: 28px 24px; min-height: 0; }
+    .featured { flex-direction: column !important; align-items: flex-start !important; padding: 36px 28px; }
+    .featured h4 { font-size: 24px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">Moazam Rauf</a>
+    <ul>
+      <li><a href="#imaging">Imaging Resource</a></li>
+      <li><a href="#nnd">Nurse Next Door</a></li>
+      <li><a href="#th">Transparent Hands</a></li>
+      <li><a href="#qh">Qabool Hai</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <h1>Words that work.</h1>
+  <h2>Thirteen years of writing for international publications across healthcare, photography, and nonprofit.</h2>
+  <div class="links">
+    <a href="mailto:moaxcym@gmail.com">Get in touch</a>
+    <a href="#imaging">See the work</a>
+  </div>
+</header>
+
+<!-- IMAGING RESOURCE -->
+<section class="pub" id="imaging">
+  <div class="pub-inner">
+    <p class="pub-eyebrow reveal">Staff Writer</p>
+    <h2 class="pub-title reveal">Imaging Resource.</h2>
+    <p class="pub-sub reveal">News, gear analysis, and deal coverage for one of the longest-running US photography publications.</p>
+
+    <div class="articles">
+      <a class="article reveal" href="https://www.imaging-resource.com/news/2025/09/01/insights-from-the-top-images-of-the-cewe-awards" target="_blank" rel="noopener">
+        <h3>Insights From the Top Images of the CEWE Awards</h3>
+        <p>A close read of the winning images from one of Europe's largest photo competitions — composition, intent, and what each frame is doing under the surface.</p>
+        <span class="read">Read article</span>
+      </a>
+
+      <a class="article reveal" href="https://www.imaging-resource.com/news/2025/08/28/seeking-meaning-beyond-colors-black-white-awards-2025" target="_blank" rel="noopener">
+        <h3>Seeking Meaning Beyond Colors</h3>
+        <p>A feature on the 2025 Black and White Photo Awards, opening with the question of whether monochrome can hold its own in a world flooded with color.</p>
+        <span class="read">Read article</span>
+      </a>
+
+      <a class="article featured reveal" href="https://www.imaging-resource.com/author/moazam-rauf/" target="_blank" rel="noopener">
+        <div>
+          <h4>Nine pages of bylines.</h4>
+          <p>Full archive of news, deal write-ups, and gear features.</p>
+        </div>
+        <span class="read">View author page</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NURSE NEXT DOOR -->
+<section class="pub" id="nnd">
+  <div class="pub-inner">
+    <p class="pub-eyebrow reveal">Freelance Writer</p>
+    <h2 class="pub-title reveal">Nurse Next Door.</h2>
+    <p class="pub-sub reveal">Long-form blog content for a North American home-care brand. Written to rank and to convert anxious families into a phone call.</p>
+
+    <div class="articles">
+      <a class="article reveal" href="https://northernvirginia.nursenextdoor.com/a-guide-to-in-home-senior-care/" target="_blank" rel="noopener">
+        <h3>A Guide to In-Home Senior Care</h3>
+        <p>A pillar guide covering service types, benefits, and decision points for families weighing in-home care for an aging parent.</p>
+        <span class="read">Read article</span>
+      </a>
+
+      <a class="article reveal" href="https://northernvirginia.nursenextdoor.com/top-5-qualities-of-in-home-caregivers/" target="_blank" rel="noopener">
+        <h3>Top 5 Qualities of In-Home Caregivers</h3>
+        <p>A short, decision-stage piece written for families vetting caregivers — the kind of post that turns cold traffic into a consultation.</p>
+        <span class="read">Read article</span>
+      </a>
+
+      <a class="article reveal" href="https://northernvirginia.nursenextdoor.com/how-to-travel-safely-with-alzheimers-patients/" target="_blank" rel="noopener">
+        <h3>How to Travel Safely With Alzheimer's Patients</h3>
+        <p>Practical, step-by-step guidance for families planning travel with a loved one in the early or middle stages of Alzheimer's.</p>
+        <span class="read">Read article</span>
+      </a>
+
+      <a class="article reveal" href="https://northernvirginia.nursenextdoor.com/designing-a-senior-friendly-downsized-home-without-sacrificing-style/" target="_blank" rel="noopener">
+        <h3>Senior-Friendly Downsized Home, Without Sacrificing Style</h3>
+        <p>A lifestyle-meets-utility post for empty-nesters reworking a home for safer aging. Written to rank for a long-tail design and accessibility query.</p>
+        <span class="read">Read article</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENT HANDS -->
+<section class="pub" id="th">
+  <div class="pub-inner">
+    <p class="pub-eyebrow reveal">Senior Content Writer</p>
+    <h2 class="pub-title reveal">Transparent Hands.</h2>
+    <p class="pub-sub reveal">Healthcare nonprofit serving low-income patients across Pakistan, with an international donor base. Explainers, faith-based fundraising, and SEO content built to bring in new donors.</p>
+
+    <div class="articles">
+      <a class="article reveal" href="https://www.transparenthands.org/501c3-nonprofit-organization/" target="_blank" rel="noopener">
+        <h3>What is a 501(c)(3) Nonprofit Organization?</h3>
+        <p>An explainer page targeting US donors searching for tax-deductible giving. Written to rank for a high-intent informational keyword and convert into a donation.</p>
+        <span class="read">Read article</span>
+      </a>
+
+      <a class="article reveal" href="https://www.transparenthands.org/the-significance-of-hajj-in-islam/" target="_blank" rel="noopener">
+        <h3>The Significance of Hajj in Islam</h3>
+        <p>A long-form piece on the rituals, history, and spiritual meaning of Hajj — published to capture seasonal search traffic during Dhul Hijjah.</p>
+        <span class="read">Read article</span>
+      </a>
+
+      <a class="article full reveal" href="https://www.transparenthands.org/what-is-laylatul-qadr-and-its-importance-in-ramadan/" target="_blank" rel="noopener">
+        <h3>What Is Laylatul Qadr and Its Importance in Ramadan</h3>
+        <p>A Ramadan-season pillar piece on the Night of Power. Written to capture both informational searches and donor intent during the most active giving window of the Islamic calendar.</p>
+        <span class="read">Read article</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- QABOOL HAI -->
+<section class="pub" id="qh">
+  <div class="pub-inner">
+    <p class="pub-eyebrow reveal">Content Writer</p>
+    <h2 class="pub-title reveal">Qabool Hai.</h2>
+    <p class="pub-sub reveal">Pakistani matchmaking and wedding services brand. Social copy for a consumer-facing audience — campaign posts, brand voice work, and seasonal content.</p>
+
+    <div class="articles">
+      <a class="article full reveal" href="https://www.facebook.com/qaboolhaidigital" target="_blank" rel="noopener">
+        <h3>Qabool Hai — Facebook</h3>
+        <p>A live archive of social copy written for the brand. Includes campaign posts, awareness content, and ongoing engagement work across the page's posting history.</p>
+        <span class="read">View on Facebook</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-cta">
+      <h3>Available for new work.</h3>
+      <p>Website copy, ad copy, SEO blogs, and long-form features.</p>
+      <a class="pill" href="mailto:moaxcym@gmail.com">moaxcym@gmail.com</a>
+    </div>
+    <div class="footer-bottom">
+      <span>Moazam Rauf · Lahore, Pakistan</span>
+      <div class="legal">
+        <a href="tel:+923004322544">+92 300 4322544</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Quiet, single-trigger reveal — no bounce, no theatre
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
