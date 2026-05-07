@@ -4,7 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moazam Rauf — Writer</title>
-<meta name="description" content="Selected writing by Moazam Rauf. Content, copy, and editorial work for international publications.">
+<meta name="description" content="Moazam Rauf is a writer with thirteen years of SEO content, brand copy, and editorial features for international publications across healthcare, photography, and nonprofit.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Moazam Rauf — Writer">
+<meta property="og:description" content="SEO content, brand copy, and editorial features. Thirteen years writing for international publications across healthcare, photography, and nonprofit.">
+<meta property="og:url" content="https://moazamrauf-writer.github.io/portfolio/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Moazam Rauf — Writer">
+<meta name="twitter:description" content="SEO content, brand copy, and editorial features. Thirteen years writing for international publications across healthcare, photography, and nonprofit.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -111,7 +123,16 @@
     letter-spacing: -0.015em;
     color: var(--ink-mid);
     max-width: 720px;
-    margin: 0 auto 28px;
+    margin: 0 auto 18px;
+  }
+
+  .hero .hero-credibility {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: -0.005em;
+    max-width: 720px;
+    margin: 0 auto 32px;
   }
 
   .hero .links {
@@ -141,6 +162,35 @@
 
   .hero .links a:hover::after {
     transform: translateX(3px);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about {
+    background: var(--bg);
+    padding: 72px 22px 80px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .about-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-eyebrow {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-mid);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .about-body {
+    font-size: clamp(19px, 2.2vw, 24px);
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.015em;
+    color: var(--ink);
   }
 
   /* ---------- SECTION (publication) ---------- */
@@ -387,7 +437,10 @@
     .hero { padding: 80px 22px 64px; }
     .hero h1 { font-size: 40px; }
     .hero h2 { font-size: 19px; }
+    .hero .hero-credibility { font-size: 13px; line-height: 1.5; }
     .hero .links { flex-direction: column; gap: 12px; align-items: center; }
+    .about { padding: 56px 22px 64px; }
+    .about-body { font-size: 18px; }
     section.pub { padding: 64px 22px; }
     .articles { grid-template-columns: 1fr; gap: 14px; }
     .article { padding: 28px 24px; min-height: 0; }
@@ -415,22 +468,33 @@
   <div class="nav-inner">
     <a class="brand" href="#top">Moazam Rauf</a>
     <ul>
+      <li><a href="#about">About</a></li>
       <li><a href="#imaging">Imaging Resource</a></li>
       <li><a href="#nnd">Nurse Next Door</a></li>
       <li><a href="#th">Transparent Hands</a></li>
-      <li><a href="#qh">Qabool Hai</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <h1>Words that work.</h1>
-  <h2>Thirteen years of writing for international publications across healthcare, photography, and nonprofit.</h2>
+  <h2>SEO content, brand copy, and editorial features. Thirteen years writing for international publications across healthcare, photography, and nonprofit.</h2>
+  <p class="hero-credibility">Staff Writer at Imaging Resource · Senior Content Writer at Transparent Hands · 9+ pages of bylines</p>
   <div class="links">
     <a href="mailto:moaxcym@gmail.com">Get in touch</a>
     <a href="#imaging">See the work</a>
   </div>
 </header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner reveal">
+    <p class="about-eyebrow">About</p>
+    <p class="about-body">
+      I'm a writer based in Lahore, working with brands, agencies, and editors across the US, Canada, and the UK. Thirteen years in, I've written for one of the longest-running US photography publications, ranked SEO content for a North American home-care brand, and built donor-facing campaigns for a healthcare nonprofit during its highest-stakes giving seasons. I do my best work for clients who care about the writing, not just the word count.
+    </p>
+  </div>
+</section>
 
 <!-- IMAGING RESOURCE -->
 <section class="pub" id="imaging">
@@ -442,7 +506,7 @@
     <div class="articles">
       <a class="article reveal" href="https://www.imaging-resource.com/news/2025/09/01/insights-from-the-top-images-of-the-cewe-awards" target="_blank" rel="noopener">
         <h3>Insights From the Top Images of the CEWE Awards</h3>
-        <p>A close read of the winning images from one of Europe's largest photo competitions — composition, intent, and what each frame is doing under the surface.</p>
+        <p>A close read of the winning images from one of Europe's largest photo competitions. Written for serious photographers who want craft analysis, not a press-release rewrite.</p>
         <span class="read">Read article</span>
       </a>
 
@@ -479,7 +543,7 @@
 
       <a class="article reveal" href="https://northernvirginia.nursenextdoor.com/top-5-qualities-of-in-home-caregivers/" target="_blank" rel="noopener">
         <h3>Top 5 Qualities of In-Home Caregivers</h3>
-        <p>A short, decision-stage piece written for families vetting caregivers — the kind of post that turns cold traffic into a consultation.</p>
+        <p>A short, decision-stage piece written for families vetting caregivers. The kind of post that turns cold traffic into a consultation.</p>
         <span class="read">Read article</span>
       </a>
 
@@ -514,7 +578,7 @@
 
       <a class="article reveal" href="https://www.transparenthands.org/the-significance-of-hajj-in-islam/" target="_blank" rel="noopener">
         <h3>The Significance of Hajj in Islam</h3>
-        <p>A long-form piece on the rituals, history, and spiritual meaning of Hajj — published to capture seasonal search traffic during Dhul Hijjah.</p>
+        <p>A long-form piece on the rituals, history, and spiritual meaning of Hajj. Published to capture seasonal search traffic during Dhul Hijjah.</p>
         <span class="read">Read article</span>
       </a>
 
@@ -527,35 +591,16 @@
   </div>
 </section>
 
-<!-- QABOOL HAI -->
-<section class="pub" id="qh">
-  <div class="pub-inner">
-    <p class="pub-eyebrow reveal">Content Writer</p>
-    <h2 class="pub-title reveal">Qabool Hai.</h2>
-    <p class="pub-sub reveal">Pakistani matchmaking and wedding services brand. Social copy for a consumer-facing audience — campaign posts, brand voice work, and seasonal content.</p>
-
-    <div class="articles">
-      <a class="article full reveal" href="https://www.facebook.com/qaboolhaidigital" target="_blank" rel="noopener">
-        <h3>Qabool Hai — Facebook</h3>
-        <p>A live archive of social copy written for the brand. Includes campaign posts, awareness content, and ongoing engagement work across the page's posting history.</p>
-        <span class="read">View on Facebook</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-cta">
-      <h3>Available for new work.</h3>
-      <p>Website copy, ad copy, SEO blogs, and long-form features.</p>
+      <h3>Have a project? Let's talk.</h3>
+      <p>Tell me what you're working on. Site copy, an ad campaign, SEO content, or a longer feature. I usually reply within a day.</p>
       <a class="pill" href="mailto:moaxcym@gmail.com">moaxcym@gmail.com</a>
     </div>
     <div class="footer-bottom">
       <span>Moazam Rauf · Lahore, Pakistan</span>
-      <div class="legal">
-        <a href="tel:+923004322544">+92 300 4322544</a>
-      </div>
+      <span>© 2026</span>
     </div>
   </div>
 </footer>
