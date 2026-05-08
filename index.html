@@ -19,7 +19,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff;
@@ -66,7 +66,7 @@
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    height: 48px;
+    height: 64px;
     display: flex;
     align-items: center;
   }
@@ -75,7 +75,7 @@
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
-    padding: 0 22px;
+    padding: 0 22px 0 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,7 +83,42 @@
     font-weight: 500;
   }
 
-  nav .brand { color: var(--ink); }
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  nav .brand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+  }
+
+  .brand-contact {
+    font-family: var(--font);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--link);
+    letter-spacing: 0.02em;
+    transition: color 0.2s var(--ease);
+  }
+
+  .brand-contact:hover { color: var(--link-hover); }
+
+  .brand-name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pen-icon {
+    flex-shrink: 0;
+    opacity: 0.82;
+  }
 
   nav ul {
     list-style: none;
@@ -98,7 +133,7 @@
     font-weight: 400;
   }
 
-  nav ul a:hover { opacity: 1; }
+  nav ul a:hover { opacity: 1; color: #2ab8b0; }
 
   /* ---------- HERO ---------- */
   .hero {
@@ -166,7 +201,7 @@
 
   /* ---------- ABOUT ---------- */
   .about {
-    background: var(--bg);
+    background: #eef4fb;
     padding: 72px 22px 80px;
     border-bottom: 1px solid var(--rule);
   }
@@ -447,7 +482,66 @@
     .featured { flex-direction: column !important; align-items: flex-start !important; padding: 36px 28px; }
     .featured h4 { font-size: 24px; }
     .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    .contact-pills { grid-template-columns: repeat(2, 1fr); }
   }
+
+  /* ---------- CLIENT LOGO ---------- */
+  .pub-logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 36px;
+  }
+
+  .pub-logo {
+    display: block;
+    height: 72px;
+    width: auto;
+    max-width: 300px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.55);
+    -webkit-mask-image: radial-gradient(ellipse 88% 88% at center, black 52%, transparent 100%);
+    mask-image: radial-gradient(ellipse 88% 88% at center, black 52%, transparent 100%);
+    transition: filter 0.35s var(--ease);
+  }
+
+  .pub-logo:hover {
+    filter: grayscale(0%) opacity(1);
+  }
+
+  /* ---------- FOOTER CONTACT PILLS ---------- */
+  .contact-pills {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .pill,
+  .pill-wa,
+  .pill-upwork,
+  .pill-linkedin {
+    display: block;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 980px;
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+    transition: filter 0.2s var(--ease);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .pill           { background: #e91e8c; }
+  .pill:hover     { background: #c9177a; }
+  .pill-wa        { background: #25d366; }
+  .pill-wa:hover  { background: #1ebe5d; }
+  .pill-upwork    { background: #14a800; }
+  .pill-upwork:hover { background: #119400; }
+  .pill-linkedin  { background: #0077b5; }
+  .pill-linkedin:hover { background: #005f92; }
 
   /* ---------- SCROLL REVEAL ---------- */
   .reveal {
@@ -466,7 +560,32 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="brand" href="#top">Moazam Rauf</a>
+    <div class="nav-brand">
+      <div class="brand-name-row">
+        <svg class="pen-icon" width="20" height="44" viewBox="0 0 20 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Feather vane -->
+          <path d="M10 1 C16 4,21 13,18 23 C17 28,14 31,10 33 C6 31,3 28,2 23 C-1 13,4 4,10 1 Z" fill="#d4c06a"/>
+          <!-- Right vane shading -->
+          <path d="M10 1 C16 4,21 13,18 23 C17 28,14 31,10 33 Z" fill="#c4b05a"/>
+          <!-- Central shaft -->
+          <line x1="10" y1="1" x2="10" y2="44" stroke="#7a6028" stroke-width="1.4" stroke-linecap="round"/>
+          <!-- Left barbs -->
+          <path d="M10 8 C7 11,3 15,2 19" stroke="#a89040" stroke-width="0.85" fill="none" stroke-linecap="round"/>
+          <path d="M10 14 C7 17,3 21,2 25" stroke="#a89040" stroke-width="0.85" fill="none" stroke-linecap="round"/>
+          <path d="M10 20 C8 23,5 26,4 29" stroke="#a89040" stroke-width="0.85" fill="none" stroke-linecap="round"/>
+          <!-- Right barbs -->
+          <path d="M10 8 C13 11,17 15,18 19" stroke="#988030" stroke-width="0.85" fill="none" stroke-linecap="round"/>
+          <path d="M10 14 C13 17,17 21,18 25" stroke="#988030" stroke-width="0.85" fill="none" stroke-linecap="round"/>
+          <path d="M10 20 C12 23,15 26,16 29" stroke="#988030" stroke-width="0.85" fill="none" stroke-linecap="round"/>
+          <!-- Quill nib -->
+          <path d="M7.5 33.5 L12.5 33.5 L10 44 Z" fill="#6a5020"/>
+          <!-- Nib slit -->
+          <line x1="10" y1="36" x2="10" y2="44" stroke="#3a2808" stroke-width="0.55"/>
+        </svg>
+        <a class="brand" href="#top">Moazam Rauf</a>
+      </div>
+      <a class="brand-contact" href="#contact">Contact Me</a>
+    </div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#imaging">Imaging Resource</a></li>
@@ -482,11 +601,7 @@
 <header class="hero" id="top">
   <h1>Words that work.</h1>
   <h2>SEO content, brand copy, and editorial features. Thirteen years writing for international publications across healthcare, photography, and nonprofit.</h2>
-  <p class="hero-credibility">Staff Writer at Imaging Resource · Senior Content Writer at Transparent Hands · 9+ pages of bylines</p>
-  <div class="links">
-    <a href="mailto:moaxcym@gmail.com">Get in touch</a>
-    <a href="#imaging">See the work</a>
-  </div>
+  <p class="hero-credibility">Staff Writer at Imaging Resource, Senior Content Writer at Transparent Hands, Editor at Visiting Angels &amp; a Freelance writer at Upwork.</p>
 </header>
 
 <!-- ABOUT -->
@@ -502,6 +617,9 @@
 <!-- IMAGING RESOURCE -->
 <section class="pub" id="imaging">
   <div class="pub-inner">
+    <div class="pub-logo-wrap reveal">
+      <img class="pub-logo" src="images/Imaging%20Resource.jpeg" alt="Imaging Resource">
+    </div>
     <p class="pub-eyebrow reveal">Staff Writer</p>
     <h2 class="pub-title reveal">Imaging Resource.</h2>
     <p class="pub-sub reveal">News, gear analysis, and deal coverage for one of the longest-running US photography publications.</p>
@@ -533,6 +651,9 @@
 <!-- NURSE NEXT DOOR -->
 <section class="pub" id="nnd">
   <div class="pub-inner">
+    <div class="pub-logo-wrap reveal">
+      <img class="pub-logo" src="images/Nurse%20Next%20Door.png" alt="Nurse Next Door">
+    </div>
     <p class="pub-eyebrow reveal">Freelance Writer</p>
     <h2 class="pub-title reveal">Nurse Next Door.</h2>
     <p class="pub-sub reveal">Long-form blog content for a North American home-care brand. Written to rank and to convert anxious families into a phone call.</p>
@@ -568,6 +689,9 @@
 <!-- TRANSPARENT HANDS -->
 <section class="pub" id="th">
   <div class="pub-inner">
+    <div class="pub-logo-wrap reveal">
+      <img class="pub-logo" src="images/Transparent%20Hands.jpeg" alt="Transparent Hands">
+    </div>
     <p class="pub-eyebrow reveal">Senior Content Writer</p>
     <h2 class="pub-title reveal">Transparent Hands.</h2>
     <p class="pub-sub reveal">Healthcare nonprofit serving low-income patients across Pakistan, with an international donor base. Explainers, faith-based fundraising, and SEO content built to bring in new donors.</p>
@@ -597,6 +721,9 @@
 <!-- VISITING ANGELS -->
 <section class="pub" id="va">
   <div class="pub-inner">
+    <div class="pub-logo-wrap reveal">
+      <img class="pub-logo" src="images/Visiting%20Angels.png" alt="Visiting Angels">
+    </div>
     <p class="pub-eyebrow reveal">Editor</p>
     <h2 class="pub-title reveal">Visiting Angels.</h2>
     <p class="pub-sub reveal">Location-targeted SEO content for a national home-care franchise. Articles built to rank in competitive Northern Virginia local search and convert families into consultations.</p>
@@ -638,6 +765,9 @@
 <!-- QABOOL HAI -->
 <section class="pub" id="qh">
   <div class="pub-inner">
+    <div class="pub-logo-wrap reveal">
+      <img class="pub-logo" src="images/Qabool%20Hai.jpeg" alt="Qabool Hai">
+    </div>
     <p class="pub-eyebrow reveal">Content for Landing Pages &amp; Technical Writing</p>
     <h2 class="pub-title reveal">Qabool Hai.</h2>
     <p class="pub-sub reveal">Landing page copy and technical writing for a Pakistani matrimonial platform. Clear, conversion-focused prose for a product where trust is the first thing users are looking for.</p>
@@ -657,6 +787,9 @@
 <!-- ALKHIDMAT FOUNDATION -->
 <section class="pub" id="alkhidmat">
   <div class="pub-inner">
+    <div class="pub-logo-wrap reveal">
+      <img class="pub-logo" src="images/Alkhidmat%20Foundation.png" alt="Alkhidmat Foundation">
+    </div>
     <p class="pub-eyebrow reveal">Content for Landing Pages &amp; Technical Writing</p>
     <h2 class="pub-title reveal">Alkhidmat Foundation.</h2>
     <p class="pub-sub reveal">Landing page and technical writing for one of Pakistan's largest charitable organisations. Donor-facing copy written to earn trust, communicate impact, and drive giving.</p>
@@ -675,10 +808,15 @@
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-cta">
+    <div class="footer-cta" id="contact">
       <h3>Have a project? Let's talk.</h3>
       <p>Tell me what you're working on. Site copy, an ad campaign, SEO content, or a longer feature. I usually reply within a day.</p>
-      <a class="pill" href="mailto:moaxcym@gmail.com">moaxcym@gmail.com</a>
+      <div class="contact-pills">
+        <a class="pill" href="mailto:moaxcym@gmail.com">moaxcym@gmail.com</a>
+        <a class="pill-wa" href="https://wa.me/933004322544" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="pill-upwork" href="https://www.upwork.com/freelancers/moazamrauf" target="_blank" rel="noopener">Upwork</a>
+        <a class="pill-linkedin" href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
     <div class="footer-bottom">
       <span>Moazam Rauf · Lahore, Pakistan</span>
